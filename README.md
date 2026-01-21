@@ -1,6 +1,8 @@
 # Superpowers for OpenCode
 
 A complete software development workflow built on composable skills for OpenCode.
+This is a fork of Jesse Vincent's fantastic [Superpowers](https://github.com/obra/superpowers) adapted for OpenCode.
+All I did was strip anything non-opencode from it to see if a tighter coupling would result in more robust skill discovery and enforcement.
 
 ## What is Superpowers?
 

@@ -2,6 +2,15 @@
 
 ## 5.0.0 - OpenCode Native (2026-01-21)
 
+---
+
+> **Note:** This project is a fork of [obra/superpowers](https://github.com/obra/superpowers) 
+> adapted specifically for OpenCode. Historical release notes below reference the original 
+> multi-platform implementation and may mention Claude Code, Codex, and Anthropic-specific 
+> features that have been replaced with OpenCode-native equivalents.
+
+---
+
 **BREAKING CHANGE:** This release removes support for Claude Code and Codex, focusing exclusively on OpenCode.
 
 ### Major Changes
