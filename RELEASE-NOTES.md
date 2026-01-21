@@ -1,4 +1,57 @@
-# Superpowers Release Notes
+# Release Notes
+
+## 5.0.0 - OpenCode Native (2026-01-21)
+
+**BREAKING CHANGE:** This release removes support for Claude Code and Codex, focusing exclusively on OpenCode.
+
+### Major Changes
+
+- **Removed Claude Code support** - Deleted `.claude-plugin/`, hooks, commands, agents
+- **Removed Codex support** - Deleted `.codex/` directory
+- **Simplified plugin** - Removed custom tools, using OpenCode's native `skill` tool
+- **Automatic enforcement** - Plugin injects "using-superpowers" on session start
+- **Zero configuration** - No manual AGENTS.md editing required
+- **Updated all skills** - Changed `Skill` tool to `skill` tool
+- **Native skill discovery** - Uses OpenCode's built-in skill system
+
+### Migration from 4.x
+
+If you were using superpowers with OpenCode on 4.x:
+
+1. Remove old installation:
+   ```bash
+   rm -rf ~/.config/opencode/superpowers
+   rm ~/.config/opencode/plugin/superpowers.js
+   rm ~/.config/opencode/skills
+   ```
+
+2. Follow new installation instructions in README.md
+
+### Why This Change?
+
+The multi-platform architecture added unnecessary complexity. OpenCode's native skill system provides everything we need. This change:
+
+- Eliminates custom tools (`use_skill`, `find_skills`)
+- Reduces maintenance burden
+- Provides tighter OpenCode integration
+- Maintains automatic enforcement (like Claude Code)
+- Simplifies installation
+- Makes skills more reliable
+
+### What Changed for Users?
+
+**Installation is even simpler:**
+- Before: Multiple steps with custom tool setup
+- After: Just 3 symlinks, automatic enforcement
+
+**User experience is unchanged:**
+- Skills still enforce automatically
+- No manual configuration needed
+- Same workflow as before
+
+---
+
+# Historical Release Notes (Pre-5.0)
 
 ## v4.0.3 (2025-12-26)
 
