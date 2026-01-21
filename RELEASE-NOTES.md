@@ -21,7 +21,7 @@ If you were using superpowers with OpenCode on 4.x:
 1. Remove old installation:
    ```bash
    rm -rf ~/.config/opencode/superpowers
-   rm ~/.config/opencode/plugin/superpowers.js
+   rm ~/.config/opencode/plugins/superpowers.js
    rm ~/.config/opencode/skills
    ```
 

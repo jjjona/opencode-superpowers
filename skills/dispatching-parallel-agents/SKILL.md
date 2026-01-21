@@ -66,11 +66,10 @@ Each agent gets:
 ### 3. Dispatch in Parallel
 
 ```typescript
-// In Claude Code / AI environment
+// In OpenCode environment - all three agents run concurrently
 @general "Fix agent-tool-abort.test.ts failures"
 @general "Fix batch-completion-behavior.test.ts failures"
 @general "Fix tool-approval-race-conditions.test.ts failures"
-// All three run concurrently
 ```
 
 ### 4. Review and Integrate
