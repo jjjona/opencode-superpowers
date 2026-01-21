@@ -3,9 +3,9 @@
 Use this template when dispatching an implementer subagent.
 
 ```
-Task tool (general-purpose):
-  description: "Implement Task N: [task name]"
-  prompt: |
+@general "Implement Task N: [task name]"
+
+Context to provide to the subagent:
     You are implementing Task N: [task name]
 
     ## Task Description
