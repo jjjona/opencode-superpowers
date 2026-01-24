@@ -1,3 +1,11 @@
+### Disclaimer
+I forked and altered this because I thought the OpenCode integration acted somewhat instable because it was added on later in a Claude Code first system. After further testing it turns out that it was a skill issue (pun intended) on my part. I just had to reframe my prompts slightly to trigger Jesse's Superpowers consistently.
+
+You can of course use this version if you want to, but if you want to use Superpowers you might be better off with the original: [Superpowers](https://github.com/obra/superpowers)
+
+---
+---
+
 # Superpowers for OpenCode
 
 A complete software development workflow built on composable skills for OpenCode.
@@ -33,10 +41,17 @@ Superpowers leverages OpenCode's native skill system with automatic enforcement:
 git clone https://github.com/jjjona/opencode-superpowers ~/.config/opencode/superpowers
 
 # 2. Symlink plugin for automatic enforcement
-ln -sf ~/.config/opencode/superpowers/.opencode/plugin/superpowers.js ~/.config/opencode/plugins/superpowers.js
+mkdir -p ~/.config/opencode/plugins
+rm -f ~/.config/opencode/plugins/superpowers.js
+ln -s ~/.config/opencode/superpowers/.opencode/plugins/superpowers.js ~/.config/opencode/plugins/superpowers.js
 
-# 3. Symlink skills directory for native OpenCode discovery
-ln -sf ~/.config/opencode/superpowers/skills ~/.config/opencode/skills
+# 3. Install skills (global discovery expects ~/.config/opencode/skills/<name>/SKILL.md)
+mkdir -p ~/.config/opencode/skills
+
+for d in ~/.config/opencode/superpowers/skills/*; do
+  name="$(basename "$d")"
+  ln -s "$d" ~/.config/opencode/skills/"$name"
+done
 ```
 
 ### Verify Installation
@@ -106,10 +121,6 @@ git pull
 4. Submit a PR
 
 See `skills/writing-skills/SKILL.md` for the complete guide.
-
-## Sponsorship
-
-If Superpowers has helped you, consider [sponsoring Jesse's opensource work](https://github.com/sponsors/obra).
 
 ## License
 
